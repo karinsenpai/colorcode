@@ -4,6 +4,7 @@ let currentProjectIndex = parseInt(localStorage.getItem("currentProjectIndex")) 
 const output = document.getElementById("output");
 const projectTabs = document.getElementById("projectTabs");
 const addProjectBtn = document.getElementById("addProject");
+const errorMessage = document.getElementById("errorMessage");
 
 function saveProjects() {
   localStorage.setItem("colorProjects", JSON.stringify(projects));
@@ -26,7 +27,7 @@ function renderTabs() {
     };
 
     const buttonContainer = document.createElement("div");
-    buttonContainer.className = "button-container";  // ボタンのラッパー
+    buttonContainer.className = "button-container";
 
     const renameBtn = document.createElement("button");
     renameBtn.textContent = "編集";
@@ -60,12 +61,11 @@ function renderTabs() {
       }
     };
 
-    // ボタンをラッパーに追加
     buttonContainer.appendChild(renameBtn);
     buttonContainer.appendChild(deleteBtn);
     
     tab.appendChild(nameSpan);
-    tab.appendChild(buttonContainer);  // ボタンのラッパーをタブに追加
+    tab.appendChild(buttonContainer);
     projectTabs.appendChild(tab);
   });
 }
@@ -88,8 +88,10 @@ function normalizeColor() {
   const hexRegex = /^#?([0-9A-Fa-f]{6})$/;
   const match = hex.match(hexRegex);
 
+  errorMessage.textContent = ""; // エラーを毎回リセット
+
   if (!match) {
-    output.innerHTML = "<span style='color:red;'>正しい形式の16進カラーコードを入力してください。</span>";
+    errorMessage.innerHTML = "<span style='color:red;'>正しい形式の16進カラーコードを入力してください。</span>";
     return;
   }
 
@@ -206,7 +208,7 @@ function renderHistory() {
   });
 }
 
-// 初期化処理
+// 初期化
 renderTabs();
 renderHistory();
 updatePreview();
