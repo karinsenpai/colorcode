@@ -215,7 +215,8 @@ body {
   }
   
   #errorMessage {
-  margin-top: 8px;
+  margin-top: 1px;
+  margin-bottom: 30px;
   font-size: 14px;
   text-align: center;
 }
