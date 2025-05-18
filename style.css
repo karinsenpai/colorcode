@@ -1,222 +1,269 @@
 body {
-    font-family: "Segoe UI", Roboto, sans-serif;
-    background-color: #f7f9fc;
-    padding: 40px;
-    color: #333;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-  }
-  
-  .project-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .project-tabs .tab {
-    padding: 8px 16px;
-    background-color: #ecf0f1;
-    border-radius: 6px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: background-color 0.3s ease;
-  }
-  
-  .project-tabs .tab.active {
-    background-color: #3498db;
-    color: #fff;
-    border-color: #2980b9;
-  }
-  
-  #addProject {
-    display: block;
-    margin: 0 auto 30px auto;
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #addProject:hover {
-    background-color: #27ae60;
-  }
-  
-  .input-area, .output-area {
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .input-area label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-  
-  .input-area input[type="text"] {
-    width: 200px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-  }
-  
-  #colorPreview {
-    width: 80px;
-    height: 40px;
-    display: inline-block;
-    vertical-align: middle;
-    border: 1px solid #ccc;
-    margin-left: 10px;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 6px;
-  }
-  
-  .input-area button {
-    margin-left: 15px;
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .input-area button:hover {
-    background-color: #2980b9;
-  }
-  
-  .output-area span {
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-    color: #2d3436;
-  }
-  
-  .output-area .color-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .output-area .color-info span {
-    margin-right: 10px;
-  }
-  
-  .output-area .color-info .color-preview {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    border-radius: 4px;
-    border: 1px solid #000;
-  }
-  
-  #clearHistory {
-    display: block;
-    margin: 20px auto;
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #clearHistory:hover {
-    background-color: #c0392b;
-  }
-  
-  .history-remove-button {
-    margin-left: 10px;
-    padding: 4px 8px;
-    font-size: 12px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .history-remove-button:hover {
-    background-color: #c0392b;
-  }
-  
-  .same-color-note {
-    margin-left: 10px;
-    color: #e67e22;
-    font-size: 14px;
-  }
-  
-  /* 修正したタブのボタン配置 */
-  .button-container {
-    display: flex;
-    gap: 8px;
-    margin-left: 10px;
-  }
-  
-  .tab-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .tab-btn:hover {
-    background-color: #2980b9;
-  }
-  
-  /* プロジェクトタブのスタイル */
-  .tab {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    background-color: #ecf0f1;
-    border-radius: 6px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: background-color 0.3s ease;
-  }
-  
-  .tab.active {
-    background-color: #3498db;
-    color: #fff;
-    border-color: #2980b9;
-  }
-  
-  .tab span {
-    margin-right: 8px;
-    font-size: 16px;
-  }
-  
-  .tab .tab-btn {
-    margin-left: 8px;
-  }
-  
-  #errorMessage {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #f7f9fc;
+  padding: 40px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.page-container {
+  display: flex;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.sidebar .project-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sidebar .tab {
+  padding: 8px 12px;
+  background-color: #dfe6e9;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .tab.active {
+  background-color: #3498db;
+  color: #fff;
+  border-color: #2980b9;
+}
+
+#addProject {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#addProject:hover {
+  background-color: #27ae60;
+}
+
+.input-area, .output-area {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-area label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.input-area input[type="text"] {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#colorPreview {
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.input-area button {
+  margin-left: 15px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+  background-color: #2980b9;
+}
+
+.output-area span {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #2d3436;
+}
+
+.output-area .color-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.output-area .color-info span {
+  margin-right: 10px;
+}
+
+.output-area .color-info .color-preview {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+
+#clearHistory {
+  display: block;
+  margin: 20px auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#clearHistory:hover {
+  background-color: #c0392b;
+}
+
+.history-remove-button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.history-remove-button:hover {
+  background-color: #c0392b;
+}
+
+.same-color-note {
+  margin-left: 10px;
+  color: #e67e22;
+  font-size: 14px;
+}
+
+.button-container {
+  display: flex;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+.tab-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #2980b9;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #ecf0f1;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: #3498db;
+  color: #fff;
+  border-color: #2980b9;
+}
+
+.tab span {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.tab .tab-btn {
+  margin-left: 8px;
+}
+
+#errorMessage {
   margin-top: 1px;
   margin-bottom: 30px;
   font-size: 14px;
   text-align: center;
+}
+
+.main-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.left-side {
+  flex: 1 1 300px;
+  max-width: 600px;
+}
+
+.right-side {
+  flex: 1 1 300px;
+  max-width: 1000px;
+}
+
+.import-area {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#import-area label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#imagePreview img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
 }
