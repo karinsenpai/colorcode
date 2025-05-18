@@ -212,3 +212,23 @@ function renderHistory() {
 renderTabs();
 renderHistory();
 updatePreview();
+
+const imageInput = document.getElementById("imageInput");
+const imagePreview = document.getElementById("imagePreview");
+
+imageInput?.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const img = document.createElement("img");
+    img.src = e.target.result;
+    img.alt = "読み込まれた画像";
+    img.style.maxWidth = "100%";
+    img.style.borderRadius = "8px";
+    imagePreview.innerHTML = "";
+    imagePreview.appendChild(img);
+  };
+  reader.readAsDataURL(file);
+});
