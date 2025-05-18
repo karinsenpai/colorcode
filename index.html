@@ -8,19 +8,34 @@
 <body>
   <h1>16進カラーコード正規化ツール</h1>
 
-  <div class="project-tabs" id="projectTabs"></div>
-  <button id="addProject">+ 新規プロジェクト</button>
+  <div class="page-container">
+    <div class="sidebar">
+      <div class="project-tabs" id="projectTabs"></div>
+      <button id="addProject">+ 新規プロジェクト</button>
+    </div>
 
-  <div class="input-area">
-    <label for="hexInput">16進カラーコード (#を含む):</label>
-    <input type="text" id="hexInput" placeholder="#FFAA00" oninput="updatePreview()">
-    <div id="colorPreview" onclick="openColorPicker()"></div>
-    <input type="color" id="colorPicker" style="display:none;" onchange="setColorFromPicker()">
-    <button onclick="normalizeColor()">正規化</button>
+    <div class="main-container">
+      <div class="left-side">
+        <div class="input-area">
+          <label for="hexInput">16進カラーコード (#を含む):</label>
+          <input type="text" id="hexInput" placeholder="#FFAA00" oninput="updatePreview()">
+          <div id="colorPreview" onclick="openColorPicker()"></div>
+          <input type="color" id="colorPicker" style="display:none;" onchange="setColorFromPicker()">
+          <button onclick="normalizeColor()">正規化</button>
+        </div>
+        <div id="errorMessage"></div>
+        <div class="output-area" id="output"></div>
+      </div>
+
+      <div class="right-side">
+        <div class="import-area">
+          <label for="imageInput">画像を読み込む:</label>
+          <input type="file" id="imageInput" accept="image/*">
+          <div id="imagePreview"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="errorMessage"></div>
-
-  <div class="output-area" id="output"></div>
 
   <script src="normalize.js"></script>
 </body>
